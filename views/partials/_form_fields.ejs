@@ -1,0 +1,17 @@
+<div class="form-group">
+    <div class="mb-3">
+        <label for="title" class="form-label">Заголовок</label>
+        <input required value="<%= articles.title %> " type="text" class="form-control" name="title" id="title" placeholder="Title">
+      </div>
+      <div class="mb-3">
+        <label for="text" class="form-label">Описание статьи</label>
+        <textarea required class="form-control" name="text" id="text" rows="3" placeholder="Text"><%= articles.text %></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="markdown" class="form-label">Разметка (Markdown)</label>
+        <textarea required class="form-control" name="markdown" id="markdown" rows="3" placeholder="Text"><%= articles.markdown %></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Подтвердить</button>
+      <a href="/" class="btn btn-warning">Отмена</a>
+</div>
