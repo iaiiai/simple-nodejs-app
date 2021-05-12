@@ -34,7 +34,13 @@ const articleSchema = new Schema(
         sanitizedHTML: {
             type: String,
             required: true
-        }
+        },
+        comments: [
+            {
+                type: Schema.Types.ObjectId, 
+                ref: 'Comment'
+            }
+        ]
     }
 )
 

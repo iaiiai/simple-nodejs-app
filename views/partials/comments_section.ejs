@@ -1,0 +1,14 @@
+<% comments.forEach(comment => { %> 
+    <!-- comment is important!! -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="card-title">
+                <h4><%= comment.username %></h4>
+            </div>
+            <div class="card-subtitle text-muted mt-3 mb-3"><%= comment.date.toLocaleDateString() %> </div>
+            <div class="card-text">
+                <p><%= comment.commentText  %></p>
+            </div>
+        </div>
+    </div>    
+    <% }) %> 

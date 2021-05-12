@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,14 @@
         <p class="mb-4 text-muted"><%= articles.date.toLocaleDateString() %></p>
         <a href="edit/<%= articles.id %>" class="btn btn-outline-primary mb-3">Править</a>
         <a href="/" class="btn btn-outline-secondary mb-3">Все статьи</a>
-        <p><%- articles.sanitizedHTML %> </p>
+        <p class="mb-5"><%- articles.sanitizedHTML %> </p>
+        <h4 class="mb-4">Комментарии</h4>
+        <form action="comment/<%= articles.slug %>" method="POST">
+            <%- include("../partials/_comment_fields.ejs") %> 
+        </form>
+        <div class="container mt-5">
+            <%- include("../partials/comments_section.ejs") %> 
+        </div>
     </div>
 
     <!-- JavaScript Bundle with Popper -->

@@ -4,6 +4,7 @@ const Article = require("./models/article_model")
 const methodOverride = require("method-override")
 const app = express()
 const articleRouter = require("./routes/articles")
+// const commentRouter = require("./routes/comments")
 
 app.use(express.urlencoded( { extended: false } ))
 app.use(methodOverride('_method'))
@@ -14,7 +15,7 @@ mongoose.connect("mongodb+srv://admin:200520072012@cluster0.pkm41.mongodb.net/my
         app.listen(process.env.PORT || 5000)
     })
     .catch((err) => {
-        console.log(err)
+        console.log("server.js file error")
     })
 app.set("view engine", 'ejs')
 
@@ -26,3 +27,4 @@ app.get('/', async (req, res) => {
 
 
 app.use('/articles', articleRouter)
+// app.use('/comment', commentRouter)
