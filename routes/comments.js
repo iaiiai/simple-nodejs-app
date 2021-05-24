@@ -1,15 +1,15 @@
 const express = require("express")
 const router = express.Router()
 const Comment = require("../models/article_comment.js")
-const Blog = require("../models/article_model")
+const Article = require("../models/article_model")
 
 
 router.post('/', async (req, res) => {
     let comment = new Comment(
         {
             username: req.body.user,
-            commentText: req.body.comment
-            articleLink: 
+            commentText: req.body.comment,
+            // articleLink: Article.findOne()
         }
     )
     console.log(req)
